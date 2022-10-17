@@ -14,18 +14,6 @@ def run():
     #     text_string = text.read()
     #     print(string.capwords(text_string), '\n\n')
 
-    ## Константы
-
-    # print('Константа string.ascii_letters\n', string.ascii_letters, '\n\n')
-    # print('Константа string.ascii_lowercase\n', string.ascii_lowercase, '\n\n')
-    # print('Константа string.ascii_uppercase\n', string.ascii_uppercase, '\n\n')
-    # print('Константа string.digits\n', string.digits, '\n\n')
-    # print('Константа string.hexdigits\n', string.hexdigits, '\n\n')
-    # print('Константа string.octdigits\n', string.octdigits, '\n\n')
-    # print('Константа string.punctuation\n', string.punctuation, '\n\n')
-    # print('Константа string.printable\n', string.printable, '\n\n')
-    # print('Константа string.whitespace\n', string.whitespace, '\n\n')
-
     ## Шаблоны
     #
     # values = {'one': 'один', 'two': 'два'}
@@ -37,26 +25,56 @@ def run():
     #
     # print(temp_str.substitute(values))
 
-    template_text = """
-        Delimiter : %%
-        Replaced  : %with_underscore
-        Ignored   : %notunderscored 
-    """
+    ## Более сложные шаблоны
+    #
+    # template_text = """
+    #     Delimiter : %%
+    #     Replaced  : %with_underscore
+    #     Ignored   : %notunderscored
+    # """
+    #
+    # d = {
+    #     'with_underscore': 'replaced',
+    #     'notunderscored': 'not replaced'
+    # }
+    #
+    # t = My_Template(template_text)
+    # print('With underscore:')
+    # print(t.safe_substitute(d))
+    #
+    # print('----------------')
+    #
+    # t2 = MyTemplate(template_text)
+    # print('Without underscore:')
+    # print(t2.safe_substitute(d))
 
-    d = {
-        'with_underscore': 'replaced',
-        'notunderscored': 'not replaced'
-    }
+    ## Класс Formatter
 
-    t = My_Template(template_text)
-    print('With underscore:')
-    print(t.safe_substitute(d))
+    s = string.Formatter()
 
-    print('----------------')
+    # s = '{} {} привет!'
+    # pattern1 = 'Пользователь'
+    # pattern2 = 'Пашочек'
+    # s = s.format(pattern1, pattern2)
+    # print(s)
 
-    t2 = MyTemplate(template_text)
-    print('Without underscore:')
-    print(t2.safe_substitute(d))
+    # -----------------------
+    # f-строки
+    # pattern_1 = 'Пользователь'
+    # pattern_2 = 'Пашочек'
+    # print(f'{pattern_1} {pattern_2} привет! - Второй вариант')
+
+    ## Константы
+    #
+    print('Константа string.ascii_letters\n', string.ascii_letters, '\n\n')
+    print('Константа string.ascii_lowercase\n', string.ascii_lowercase, '\n\n')
+    print('Константа string.ascii_uppercase\n', string.ascii_uppercase, '\n\n')
+    print('Константа string.digits\n', string.digits, '\n\n')
+    print('Константа string.hexdigits\n', string.hexdigits, '\n\n')
+    print('Константа string.octdigits\n', string.octdigits, '\n\n')
+    print('Константа string.punctuation\n', string.punctuation, '\n\n')
+    print('Константа string.printable\n', string.printable, '\n\n')
+    print('Константа string.whitespace\n', string.whitespace, '\n\n')
 
 if __name__ == '__main__':
     run()
